@@ -30,7 +30,7 @@ const HomeMain = ({ children }) => {
         </div>
         <div>
           {userId ? (
-            <a>
+            <div>
               {user
                 .filter((obj) => obj.uid == userId.user.uid)
                 .map((item, index) => {
@@ -91,11 +91,9 @@ const HomeMain = ({ children }) => {
                     </div>
                   );
                 })}
-            </a>
+            </div>
           ) : (
-            <Link to={"/login"} className="text-sm font-medium text-gray-700 ">
-              login
-            </Link>
+            <Link to={"/login"}>login</Link>
           )}
         </div>
       </Nav>
@@ -114,7 +112,7 @@ const Logo = styled(Link)`
 `;
 const Nav = styled.div`
   height: 10rem;
-  padding: 3rem 5rem;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
