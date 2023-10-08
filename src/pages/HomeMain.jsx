@@ -12,9 +12,9 @@ const HomeMain = ({ children }) => {
   const { user } = context;
   const [openPro, SetPro] = useState(false);
   console.log(user);
-  const userId = JSON.parse(localStorage.getItem("user"));
+  const userId = JSON.parse(localStorage.getItem("userRecipe"));
   const logout = () => {
-    localStorage.clear("user");
+    localStorage.clear("userRecipe");
     localStorage.removeItem("cart");
     window.location.href = "/login";
   };

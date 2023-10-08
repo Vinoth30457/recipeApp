@@ -16,7 +16,7 @@ function Login() {
     setLoading(true);
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
-      localStorage.setItem("user", JSON.stringify(result));
+      localStorage.setItem("userRecipe", JSON.stringify(result));
       toast.success("Signin Successfully", {
         position: "top-right",
         autoClose: 2000,
