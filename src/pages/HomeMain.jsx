@@ -24,7 +24,7 @@ const HomeMain = ({ children }) => {
   return (
     <div>
       <Nav>
-        <div>
+        <div style={{ display: "flex" }}>
           <GiKnifeFork />
           <Logo to={"/"}>Delicious</Logo>
         </div>
