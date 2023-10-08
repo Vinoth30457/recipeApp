@@ -30,7 +30,7 @@ const HomeMain = ({ children }) => {
         </div>
         <div>
           {userId ? (
-            <a className="text-sm font-medium text-gray-700 cursor-pointer  ">
+            <a>
               {user
                 .filter((obj) => obj.uid == userId.user.uid)
                 .map((item, index) => {
