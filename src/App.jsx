@@ -17,7 +17,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const ProtectedRouteNoLogin = ({ children }) => {
-    const user = JSON.parse(localStorage.getItem("user"));
+    const user = JSON.parse(localStorage.getItem("userRecipe"));
     if (!user) {
       return <Navigate to="/login" />;
     }
