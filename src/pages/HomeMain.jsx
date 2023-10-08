@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Search from "../components/Search";
 import Category from "../components/Category";
-import Pages from "./Pages";
+
 import myContext from "../context/data/myContext";
 
 const HomeMain = ({ children }) => {
