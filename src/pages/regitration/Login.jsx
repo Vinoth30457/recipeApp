@@ -135,7 +135,7 @@ function Login() {
             {" "}
             User credential{" "}
           </h1>
-          <p>Email : vinoth@gmail.com</p>
+          <p>Email : vinoth30457@gmail.com</p>
           <p>Password : Vinoth@238</p>
         </div>
       </div>
