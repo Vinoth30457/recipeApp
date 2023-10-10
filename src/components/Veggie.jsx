@@ -6,10 +6,14 @@ import "@splidejs/react-splide/css/sea-green";
 
 // or only core styles
 import "@splidejs/react-splide/css/core";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { AiFillHeart } from "react-icons/ai";
+import myContext from "../context/data/myContext";
 
 const Veggie = () => {
+  const context = useContext(myContext);
+  const { addCart, deleteCart, userId } = context;
   const [veggie, setVeggie] = useState([]);
   useEffect(() => {
     getPopular();
@@ -27,7 +31,7 @@ const Veggie = () => {
       setVeggie(data.recipes);
     }
   };
-  console.log(veggie);
+  // console.log(veggie);
   return (
     <Wrapper>
       <h3 style={{ textDecoration: "underline", marginBottom: "3rem" }}>
@@ -45,24 +49,47 @@ const Veggie = () => {
       >
         {veggie.map((recipe) => {
           return (
-            <Card key={recipe.id}>
-              <Link to={"/recipe/" + recipe.id}>
-                <p>{recipe.title}</p>
-                <img src={recipe.image} alt={recipe.title} />
-                <Gradient />
-              </Link>
-            </Card>
+            <CardWrapper key={recipe.id}>
+              <Card>
+                <Link to={"/recipe/" + recipe.id}>
+                  <p>{recipe.title}</p>
+                  <img src={recipe.image} alt={recipe.title} />
+                  <Gradient />
+                </Link>
+              </Card>
+              <Button onClick={() => addCart(recipe)}>
+                <AiFillHeart />
+              </Button>
+            </CardWrapper>
           );
         })}
       </div>
     </Wrapper>
   );
 };
+const CardWrapper = styled.div`
+  position: relative;
+`;
+const Button = styled.button`
+  color: red;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 2.5rem;
+  z-index: 10;
+`;
 const Wrapper = styled.div`
   margin: 4rem 0rem;
+  h3 {
+    font-size: 2rem;
+    color: #ffff;
+    text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+      0px -4px 10px rgba(255, 255, 255, 0.3);
+  }
 `;
 const Card = styled.div`
   width: 15rem;
+  box-shadow: 0px 9px 30px rgba(255, 149, 5, 0.9);
   height: 13rem;
   border-radius: 10px;
   overflow: hidden;

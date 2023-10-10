@@ -10,7 +10,14 @@
 }
 body{
   margin: 0% 20%;
-  
+  background: linear-gradient(to right,#FCCF31 , #F55555);
+  /* background-image: url("./assets/4.jpg"); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(./assets/4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+ 
 }
 Link{
   color: #313131;

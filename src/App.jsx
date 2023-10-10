@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Cuisine from "./pages/Cuisine";
 import Searched from "./pages/Searched";
 import Recipe from "./pages/Recipe";
+import Fav from "./pages/Fav";
 import MyState from "./context/data/myState";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -75,6 +76,14 @@ const App = () => {
             element={
               <ProtectedRouteNoLogin>
                 <Recipe />
+              </ProtectedRouteNoLogin>
+            }
+          />
+          <Route
+            path="/fav"
+            element={
+              <ProtectedRouteNoLogin>
+                <Fav />
               </ProtectedRouteNoLogin>
             }
           />

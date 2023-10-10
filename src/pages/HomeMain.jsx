@@ -11,7 +11,7 @@ const HomeMain = ({ children }) => {
   const context = useContext(myContext);
   const { user } = context;
   const [openPro, SetPro] = useState(false);
-  console.log(user);
+  // console.log(user);
   const userId = JSON.parse(localStorage.getItem("userRecipe"));
   const logout = () => {
     localStorage.clear("userRecipe");
@@ -24,7 +24,16 @@ const HomeMain = ({ children }) => {
   return (
     <div>
       <Nav>
-        <div style={{ display: "flex" }}>
+        <div
+          style={{
+            display: "flex",
+            color: " #fff",
+            textShadow:
+              "3px 3px 20px #FFB000, -2px 1px 30px #FFB000,3px 3px 20px #FFB000, -2px 1px 30px #FFB000",
+            fontSize: "2.5rem",
+            alignItems: "center",
+          }}
+        >
           <GiKnifeFork />
           <Logo to={"/"}>Delicious</Logo>
         </div>
@@ -54,6 +63,8 @@ const HomeMain = ({ children }) => {
                           width: "3rem",
                           height: "3rem",
                           borderRadius: "50%",
+                          boxShadow:
+                            "0px 0px 20px #FFB000, 0px 0px 30px #FFB000",
                         }}
                         className="profile"
                         onClick={() => (openPro ? SetPro(false) : SetPro(true))}
@@ -69,7 +80,15 @@ const HomeMain = ({ children }) => {
                             gap: "0.5rem",
                           }}
                         >
-                          <h3 style={{ fontSize: "1.2rem", fontWeight: "500" }}>
+                          <h3
+                            style={{
+                              fontSize: "1.2rem",
+                              fontWeight: "500",
+                              color: "#fff",
+                              textShadow:
+                                "2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(255, 255, 255, 0.3)",
+                            }}
+                          >
                             {item.name}
                           </h3>
                           <button
@@ -81,6 +100,7 @@ const HomeMain = ({ children }) => {
                               border: "none",
                               paddingBlock: "0.5rem",
                               borderRadius: "5px",
+                              fontWeight: "500",
                             }}
                             onClick={logout}
                           >
@@ -105,10 +125,10 @@ const HomeMain = ({ children }) => {
 };
 const Logo = styled(Link)`
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: "Lobster Two", cursive;
   font-weight: 400;
-  color: #313131;
+  /* color: #313131; */
 `;
 const Nav = styled.div`
   height: 10rem;

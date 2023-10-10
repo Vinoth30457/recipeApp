@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import HomeMain from "./HomeMain";
+import { AiFillHeart } from "react-icons/ai";
+import myContext from "../context/data/myContext";
 
 const Recipe = () => {
+  const context = useContext(myContext);
+  const { addCart, deleteCart, userId } = context;
   const [details, setDetails] = useState("");
   const [activeTab, setActiveTab] = useState("instructions");
   let params = useParams();
@@ -46,6 +50,7 @@ const Recipe = () => {
         >
           <div
             style={{
+              width: "100%",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -63,6 +68,9 @@ const Recipe = () => {
             >
               ingredients
             </Button>
+            {/* <button style={{ color: "red", fontSize: "2.5rem" }} onClick={()=>addCart()}>
+              <AiFillHeart />
+            </button> */}
           </div>
           {activeTab === "instructions" && (
             <div style={{ marginTop: "2rem" }}>
@@ -102,8 +110,13 @@ const DetailWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  color: #ffff;
+  text-align: center;
+  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+    0px -4px 10px rgba(255, 255, 255, 0.3);
   img {
-    width: 20rem;
+    width: 100%;
+    border-radius: 10px;
   }
   .image {
     width: 40%;

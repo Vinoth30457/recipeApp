@@ -1,3 +1,4 @@
+import { AiFillHeart } from "react-icons/ai";
 import { FaPizzaSlice, FaHamburger } from "react-icons/fa";
 import { GiNoodles, GiChopsticks, GiIndianPalace } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
@@ -25,6 +26,10 @@ const Category = () => {
       <SLink to={"/cuisine/Japanese"}>
         <GiChopsticks />
         <h4>Japanese</h4>
+      </SLink>
+      <SLink to={"/fav"}>
+        <AiFillHeart />
+        <h4>Fav</h4>
       </SLink>
     </List>
   );
