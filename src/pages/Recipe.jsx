@@ -18,6 +18,7 @@ const Recipe = () => {
     const detailsData = await data.json();
     setDetails(detailsData);
   };
+
   useEffect(() => {
     fetchDetails(params.name);
   }, [params.name]);
@@ -68,9 +69,17 @@ const Recipe = () => {
             >
               ingredients
             </Button>
-            {/* <button style={{ color: "red", fontSize: "2.5rem" }} onClick={()=>addCart()}>
+            <button
+              style={{
+                color: "red",
+                fontSize: "2.5rem",
+                filter:
+                  "drop-shadow(-3px -3px 10px rgba(0, 0, 0, 1)) drop-shadow(3px 3px 2px rgba(0, 0, 0, 1)drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))",
+              }}
+              onClick={() => addCart(details)}
+            >
               <AiFillHeart />
-            </button> */}
+            </button>
           </div>
           {activeTab === "instructions" && (
             <div style={{ marginTop: "2rem" }}>

@@ -53,10 +53,14 @@ const CardWrapper = styled.div`
 const Button = styled.button`
   color: red;
   position: absolute;
-  top: 5%;
-  right: 5%;
+  top: 0%;
+  right: 0%;
   font-size: 2rem;
   z-index: 10;
+  filter: drop-shadow(-3px -3px 10px rgba(0, 0, 0, 1))
+    drop-shadow(3px 3px 2px rgba(0, 0, 0, 1))
+    drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))
+    drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
 `;
 const Grid = styled.div`
   display: grid;
