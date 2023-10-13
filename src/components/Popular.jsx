@@ -76,7 +76,6 @@ const Popular = () => {
             <CardWrapper key={recipe.id}>
               <Card key={recipe.id}>
                 <Link to={"/recipe/" + recipe.id}>
-                  <p>{recipe.title}</p>
                   <img src={recipe.image} alt={recipe.title} />
 
                   <Gradient />
@@ -85,25 +84,7 @@ const Popular = () => {
               <Button onClick={() => addCart(recipe)}>
                 <AiFillHeart />
               </Button>
-              {/* <div className=" flex justify-center">
-                <button
-                  type="button"
-                  onClick={() => {
-                    addCart(recipe);
-                  }}
-                  disabled={!userId}
-                  className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full  py-2"
-                  color={item.includes(recipe) ? "google plus" : "twitter"}
-                  icon={item.includes(recipe) ? "heart" : "heart outline"}
-                >
-                  
-                </button>
-              </div> */}
-              {/* {item.map((item) => {
-                return (
-                  <p key={item.id}>{item.id === recipe.id ? "ok" : "not ok"}</p>
-                );
-              })} */}
+              <p>{recipe.title}</p>
             </CardWrapper>
           );
         })}
@@ -114,6 +95,14 @@ const Popular = () => {
 
 const Wrapper = styled.div`
   margin: 4rem 0rem;
+
+  p {
+    /* position: absolute; */
+    color: #ffff;
+    text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+      0px -4px 10px rgba(255, 255, 255, 0.3);
+    text-align: center;
+  }
   h3 {
     font-size: 2rem;
     color: #ffff;
@@ -122,6 +111,8 @@ const Wrapper = styled.div`
   }
 `;
 const CardWrapper = styled.div`
+  width: 15rem;
+  height: 20rem;
   position: relative;
 `;
 const Button = styled.button`
@@ -141,6 +132,7 @@ const Card = styled.div`
   height: 13rem;
   box-shadow: 0px 9px 30px rgba(255, 149, 5, 0.9);
   border-radius: 10px;
+  margin-bottom: 2rem;
   overflow: hidden;
   position: relative;
   img {
@@ -153,7 +145,7 @@ const Card = styled.div`
     object-fit: cover;
     object-position: center;
   }
-  p {
+  /* p {
     position: absolute;
     z-index: 10;
     left: 50%;
@@ -168,7 +160,7 @@ const Card = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+  } */
 `;
 const Gradient = styled.div`
   z-index: 3;

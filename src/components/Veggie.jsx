@@ -52,14 +52,15 @@ const Veggie = () => {
             <CardWrapper key={recipe.id}>
               <Card>
                 <Link to={"/recipe/" + recipe.id}>
-                  <p>{recipe.title}</p>
                   <img src={recipe.image} alt={recipe.title} />
                   <Gradient />
                 </Link>
+                <Button onClick={() => addCart(recipe)}>
+                  <AiFillHeart />
+                </Button>
               </Card>
-              <Button onClick={() => addCart(recipe)}>
-                <AiFillHeart />
-              </Button>
+
+              <p>{recipe.title}</p>
             </CardWrapper>
           );
         })}
@@ -68,7 +69,29 @@ const Veggie = () => {
   );
 };
 const CardWrapper = styled.div`
+  width: 15rem;
+  height: 18rem;
   position: relative;
+  p {
+    /* position: absolute; */
+    color: #ffff;
+    text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+      0px -4px 10px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    /* z-index: 10;
+    left: 50%;
+    bottom: 0%;
+    transform: translate(-50%, 0%);
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+  }
 `;
 const Button = styled.button`
   color: red;
@@ -92,10 +115,15 @@ const Wrapper = styled.div`
   }
 `;
 const Card = styled.div`
+  color: #fff;
+
+  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+    0px -4px 10px rgba(255, 255, 255, 0.3);
   width: 15rem;
   box-shadow: 0px 9px 30px rgba(255, 149, 5, 0.9);
   height: 13rem;
   border-radius: 10px;
+  margin-bottom: 2rem;
   overflow: hidden;
   position: relative;
   img {
@@ -107,22 +135,6 @@ const Card = styled.div`
 
     object-fit: cover;
     object-position: center;
-  }
-  p {
-    position: absolute;
-    z-index: 10;
-    left: 50%;
-    bottom: 0%;
-    transform: translate(-50%, 0%);
-    color: white;
-    width: 100%;
-    text-align: center;
-    font-weight: 600;
-    font-size: 1rem;
-    height: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 `;
 const Gradient = styled.div`
