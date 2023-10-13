@@ -27,6 +27,7 @@ function Login() {
         progress: undefined,
         theme: "colored",
       });
+      alert("Login Successfully");
       window.location.href = "/";
       setLoading(false);
     } catch (err) {
@@ -65,6 +66,17 @@ function Login() {
         });
       } else if (err.code === "auth/missing-password") {
         toast.error("Enter Password", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      } else if (err.code === "auth/invalid-login-credentials") {
+        toast.error("Wrong Password or Email", {
           position: "top-right",
           autoClose: 3000,
           hideProgressBar: true,
