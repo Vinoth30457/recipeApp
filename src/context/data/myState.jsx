@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 
 const MyState = (props) => {
   const [loading, setLoading] = useState(false);
+  const [mode, setMode] = useState("light");
 
   const [user, setUser] = useState([]);
 
@@ -74,6 +75,8 @@ const MyState = (props) => {
     deleteCart,
     userId,
     item,
+    mode,
+    setMode,
   };
 
   return (

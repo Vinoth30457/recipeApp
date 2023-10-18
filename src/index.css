@@ -9,7 +9,7 @@
   font-family: "Montserrat",sans-serif;
 }
 body{
-  margin: 0% 20%;
+  /* margin: 0% 20%; */
   background: linear-gradient(to right,#FCCF31 , #F55555);
   /* background-image: url("./assets/4.jpg"); */
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -19,6 +19,9 @@ body{
   background-attachment: fixed;
  
 }
+/* footer{
+  width: 100vw;
+} */
 Link{
   color: #313131;
 }
